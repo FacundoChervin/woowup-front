@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Email Form</h2>
+    <form id="emailForm">
+        <div>
+            <label for="senderName">Sender Name</label><br>
+            <input type="text" placeholder="Name" id="senderName" name="senderName" required><br>
+        </div>
+        <div>
+            <label for="senderEmail">Sender Email</label><br>
+            <input type="email" placeholder="Email" id="senderEmail" name="senderEmail" required><br>
+        </div>
+        <div id="recipientsContainer">
+        </div>
+        <button type="button" id="addRecipientButton" class="btn">Add Recipient</button>
+        <div>
+            <div>
+                <label for="subject">Subject</label><br>
+                <input type="text" placeholder="Subject" id="subject" name="subject" required><br>
+            </div>
+            <div>
+                <label for="content">Content</label><br>
+                <textarea id="content" placeholder="Content" name="content" rows="8" cols="50" required></textarea><br>
+            </div>
+            <div class="container" id="container">
+                <button type="button" value="Send Email" id="sendButton" class="btn btn-primary">Send Email</button>
+                <p id="sendStatusMessage" class="send-status-message"></p>
+                <span id="textToCopy" class="textToCopy"></span>
+            </div>
+    </form>
+
+    <form id="fetchSection">
+        <label for="fetchId">Enter ID</label>
+        <input type="text" id="fetchId" placeholder="Batch ID" required>
+        <button type="button" id="fetchDataButton" value="Check email batch status" class="btn">Check email batch status</button>
+        <div id="mailList"></div>
+    </form>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

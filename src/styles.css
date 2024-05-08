@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="buttton"] {
+    user-select: none; /* Disable text selection */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+small {
+    color: #666;
+}
+
+.recipient button {
+    background-color: #dc3545;
+    /* Red */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.recipient button:hover {
+    background-color: #c82333;
+}
+
+.recipient {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#addRecipientButton {
+    margin-bottom: 15px;
+}
+
+.mail-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mail-item div {
+    margin-bottom: 5px;
+}
+
+.mail-item div:first-child {
+    font-weight: bold;
+}
+
+.mail-item div:nth-child(odd) {
+    color: #333;
+}
+
+.mail-item div:nth-child(even) {
+    color: #666;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.no-display {
+    display: none;
+}
+
+.container input,
+.container button,
+.container span,
+.container p {
+    margin-right: 20px; /* Add some spacing between items */
+}
+
+.container span {
+    background-color: #ccc;
+    padding: 10px;
+}
+
+.container span:hover {
+    cursor: pointer;
+}
