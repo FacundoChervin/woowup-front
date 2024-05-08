@@ -23,27 +23,27 @@ async function sendEmail() {
         const response = await emailService.send(email.getEmail())
         cleanForm(form)
 
-
-        sendStatusMessage.textContent = 'Email sent successfully! Batch ID ===> '
-        sendStatusMessage.style.color = 'green';
-        textToCopy.textContent = response.batchID;
-        const stringTextToCopy = textToCopy.textContent;
-
-        textToCopy.classList.remove('no-display');
-
-        textToCopy.addEventListener('click', () => {
-            navigator.clipboard.writeText(stringTextToCopy)
-                .then(() => {
-                    alert('Text has been copied to clipboard');
-                })
-                .catch(err => {
-                    console.error('Unable to copy text: ', err);
-                    alert('Failed to copy text to clipboard');
-                });
-        });
-
+        if (response) {
+            sendStatusMessage.textContent = 'Email sent successfully! Batch ID ===> '
+            sendStatusMessage.style.color = 'green';
+            textToCopy.textContent = response.batchID;
+            const stringTextToCopy = textToCopy.textContent;
+            textToCopy.classList.remove('no-display');
+            textToCopy.addEventListener('click', () => {
+                navigator.clipboard.writeText(stringTextToCopy)
+                    .then(() => {
+                        alert('Text has been copied to clipboard');
+                    })
+                    .catch(err => {
+                        console.error('Unable to copy text: ', err);
+                        alert('Failed to copy text to clipboard');
+                    });
+            });
+        }
+        else{
+            sendStatusMessage.textContent = 'Error sending the email';
+        }
     } catch (error) {
-        console.log(error)
         sendStatusMessage.textContent = 'Error sending the email';
         sendStatusMessage.style.color = 'red';
     }
@@ -54,7 +54,7 @@ async function sendEmail() {
 const fetchMailData = async () => {
     const fetchId = document.getElementById('fetchId')
     const fetchIdValue = fetchId.value;
-    const data = await emailService.fetchMailData(fetchId);
+    const data = await emailService.fetchMailData(fetchIdValue);
     if (data) {
         displayMailData(data);
     } else {
