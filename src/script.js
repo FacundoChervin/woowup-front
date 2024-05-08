@@ -143,6 +143,10 @@ const displayMailData = (data) => {
         sentStatus.textContent = `Sent: ${mail.status ? 'Yes' : 'No'}`;
         mailItem.appendChild(sentStatus);
 
+        const retries = document.createElement('div');
+        retries.textContent = `retries: ${mail.retries}`;
+        mailItem.appendChild(retries);
+
         mailList.appendChild(mailItem);
     });
 }
